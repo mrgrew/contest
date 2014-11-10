@@ -1,5 +1,6 @@
 package com.drf.contest;
 
+import static org.hamcrest.core.StringContains.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -19,7 +20,7 @@ import org.springframework.web.context.WebApplicationContext;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
-@ActiveProfiles("scratch")
+@ActiveProfiles("test")
 public class WebApplicationTests {
 
 	@Autowired
@@ -35,7 +36,8 @@ public class WebApplicationTests {
 	@Test
 	public void testHome() throws Exception {
 
-		this.mvc.perform(get("/")).andExpect(status().isOk())
-				.andExpect(content().string("Bath"));
+		this.mvc.perform(get("/"))
+				.andExpect(status().isOk())
+				.andExpect(content().string(containsString("Contest")));
 	}
 }

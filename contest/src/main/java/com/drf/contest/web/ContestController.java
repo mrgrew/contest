@@ -41,7 +41,8 @@ public class ContestController {
 	@ResponseBody
 	@Transactional(readOnly = true)
 	public String helloWorld() {
-		Track track = trackService.getTrack( "AQU" ); 
-		return this.contestService.getContest(track, new Date()).toString();
+		Track track = trackService.getTrack("AQU");
+		Date date = java.sql.Date.valueOf("2014-11-07");
+		return contestService.getContest(track, date).toString();
 	}
 }
