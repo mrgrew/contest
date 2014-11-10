@@ -21,4 +21,27 @@ public class Player implements Serializable {
 
     @Column(nullable = false)
     private String email;
+
+    protected Player() {
+    }
+
+    public Player(String name, String email) {
+    	super();
+    	this.name = name;
+    	this.email = email;
+    }
+
+	public String getName() {
+		return name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	@Override
+	public String toString() {
+		return "Player [name=" + name + ", email=" + email + "]";
+	}
+
 }

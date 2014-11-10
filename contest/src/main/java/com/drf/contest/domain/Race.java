@@ -22,4 +22,21 @@ public class Race implements Serializable {
 	
 	@Column(nullable=false)
 	private Integer raceNumber;
+
+	protected Race() {
+	}
+
+	public Contest getContest() {
+		return contest;
+	}
+
+	public Integer getRaceNumber() {
+		return raceNumber;
+	}
+
+	@Override
+	public String toString() {
+		return "Race [contest=" + contest + ", raceNumber=" + raceNumber + "]";
+	}
+
 }

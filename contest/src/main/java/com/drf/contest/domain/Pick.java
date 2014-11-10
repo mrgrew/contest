@@ -24,4 +24,33 @@ public class Pick implements Serializable {
 	
 	@ManyToOne(optional=false)
 	private Horse horse;
+	
+	protected Pick() {
+	}
+	
+	public Pick(Player player, Race race, Horse horse) {
+		super();
+		this.player = player;
+		this.race = race;
+		this.horse = horse;
+	}
+
+	public Player getPlayer() {
+		return player;
+	}
+
+	public Race getRace() {
+		return race;
+	}
+
+	public Horse getHorse() {
+		return horse;
+	}
+
+	@Override
+	public String toString() {
+		return "Pick [player=" + player + ", race=" + race + ", horse=" + horse
+				+ "]";
+	}
+
 }

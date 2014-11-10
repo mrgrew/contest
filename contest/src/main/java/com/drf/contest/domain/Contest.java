@@ -23,4 +23,27 @@ public class Contest implements Serializable {
 	
 	@Column
 	private Date date;
+	
+	protected Contest() {
+	}
+
+	public Contest(Track track, Date date) {
+		super();
+		this.track = track;
+		this.date = date;
+	}
+
+	public Track getTrack() {
+		return track;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	@Override
+	public String toString() {
+		return "Contest [track=" + track + ", date=" + date + "]";
+	}
+
 }

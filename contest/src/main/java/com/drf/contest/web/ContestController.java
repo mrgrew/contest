@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.drf.contest.domain.Track;
 import com.drf.contest.service.ContestService;
+import com.drf.contest.service.TrackService;
 
 @Controller
 public class ContestController {
@@ -33,10 +34,14 @@ public class ContestController {
 	@Autowired
 	private ContestService contestService;
 
+	@Autowired
+	private TrackService trackService;
+
 	@RequestMapping("/")
 	@ResponseBody
 	@Transactional(readOnly = true)
 	public String helloWorld() {
-		return this.contestService.getContest(new Track(), new Date()).toString();
+		Track track = trackService.getTrack( "AQU" ); 
+		return this.contestService.getContest(track, new Date()).toString();
 	}
 }

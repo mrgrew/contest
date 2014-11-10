@@ -19,4 +19,21 @@ public class Horse implements Serializable {
 	@Column(nullable = false)
 	private String name;
 
+	protected Horse() {
+	}
+
+	public Horse(String name) {
+		super();
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public String toString() {
+		return "Horse [name=" + name + "]";
+	}
+
 }
