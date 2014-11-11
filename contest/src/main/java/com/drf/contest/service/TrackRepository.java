@@ -8,6 +8,8 @@ import com.drf.contest.domain.Track;
 
 interface TrackRepository extends Repository<Track, Long> {
 
+	Track find(Long id);
+
 	Track findByCode(String code);
 
 	Page<Track> findAll(Pageable pageable);

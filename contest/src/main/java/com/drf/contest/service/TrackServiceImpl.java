@@ -17,9 +17,14 @@ class TrackServiceImpl implements TrackService {
 	public TrackServiceImpl(TrackRepository trackRepository) {
 		this.trackRepository = trackRepository;
 	}
-	
+
 	@Override
-	public Track getTrack(String code) {
+	public Track findTrack(Long id) {
+		return this.trackRepository.find(id);
+	}
+
+	@Override
+	public Track findTrackByCode(String code) {
 		Assert.notNull(code, "Code must not be null");
 		return this.trackRepository.findByCode(code);
 	}

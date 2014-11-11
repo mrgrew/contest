@@ -21,7 +21,7 @@ import com.drf.contest.Application;
 public class ContestRepositoryIntegrationTests {
 
 	@Autowired
-	ContestRepository contestRepository;
+	private ContestRepository contestRepository;
 
 	@Test
 	public void executesQueryMethodsCorrectly() {
