@@ -31,6 +31,10 @@ public class Track implements Serializable {
 		this.code = code;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
 	public String getName() {
 		return name;
 	}

@@ -10,7 +10,7 @@
     <div layout:fragment="content"
         class="container">
       <form id="trackForm"
-          th:action="@{/(form)}"
+          th:action="@{/track/(form)}"
           th:object="${track}"
           action="#"
           method="post">
@@ -22,20 +22,20 @@
           </p>
         </div>
         <div class="pull-right">
-          <a th:href="@{/}" href="track.html">
+          <a th:href="@{/track}" href="track.html">
             Tracks
           </a>
-        </div>
-        <label for="summary">Summary</label>
-        <input type="text"
-            th:field="*{summary}"
-            th:class="${#fields.hasErrors('summary')} ? 'field-error'"/>
-        <label for="text">Track</label>
-        <textarea
-            th:field="*{text}"
-            th:class="${#fields.hasErrors('text')} ? 'field-error'"></textarea>
-        <div class="form-actions">
-          <input type="submit" value="Create"/>
+          <label for="name">Name</label>
+          <input type="text"
+                 th:field="*{name}"
+                 th:class="${#fields.hasErrors('name')} ? 'field-error'"/>
+          <label for="code">Code</label>
+          <input type="text"
+                 th:field="*{code}"
+                 th:class="${#fields.hasErrors('code')} ? 'field-error'"></input>
+          <div class="form-actions">
+            <input type="submit" value="Create"/>
+          </div>          
         </div>
       </form>
     </div>

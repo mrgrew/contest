@@ -24,7 +24,7 @@ public class Application {
 		return new Converter<String, Track>() {
 			@Override
 			public Track convert(String id) {
-				return trackService.findTrack(Long.valueOf(id));
+				return trackService.findTrackById(Long.valueOf(id));
 			}
 		};
 	}

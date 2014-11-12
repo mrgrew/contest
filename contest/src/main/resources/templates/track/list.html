@@ -9,7 +9,7 @@
     <h1 layout:fragment="header">Tracks : View all</h1>
     <div layout:fragment="content" class="container">
       <div class="pull-right">
-        <a href="form.html" th:href="@{/(form)}">Create Track</a>
+        <a href="form.html" th:href="@{/track(form)}">Create Track</a>
        </div>
       <table class="table table-bordered table-striped">
         <thead>
@@ -28,7 +28,7 @@
           <tr th:each="track : ${tracks}">
             <td>1
               <a href="view.html"
-                 th:href="@{'/' + ${track.id}}"
+                 th:href="@{'/track/' + ${track.id}}"
                  th:text="${track.id}">
                 1
               </a>

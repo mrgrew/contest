@@ -16,34 +16,15 @@
 
 package com.drf.contest.web;
 
-import java.util.Date;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.drf.contest.domain.Track;
-import com.drf.contest.service.ContestService;
-import com.drf.contest.service.TrackService;
 
 @Controller
-@RequestMapping("/contest")
-public class ContestController {
-
-	@Autowired
-	private ContestService contestService;
-
-	@Autowired
-	private TrackService trackService;
+@RequestMapping("/")
+public class HomeController {
 
 	@RequestMapping
-	@ResponseBody
-	@Transactional(readOnly = true)
-	public String helloWorld() {
-		Track track = trackService.findTrackByCode("AQU");
-		Date date = java.sql.Date.valueOf("2014-11-07");
-		return contestService.getContest(track, date).toString();
+	public String index() {
+		return "index";
 	}
 }
